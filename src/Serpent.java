@@ -17,7 +17,13 @@ public class Serpent extends Animal{
 
     @Override
     public String toString(){
-        String res = "";
-        return res;
+        String venimeux = "";
+        if(this.estVenimeux()){
+            venimeux = "est venimeux";
+        }
+        else{
+            venimeux = "n'est pas venimeux";
+        }
+        return super.toString() + "et " + venimeux;
     }
 }

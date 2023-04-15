@@ -3,7 +3,7 @@ javac -d bin src/*.java
 
 
 Ex�cuter la classe Executable :
-java -cp -ea bin NomDeLaClasse
+java -cp -ea bin Executable
 
 
 G�n�rer la javadoc dans le dossier doc/

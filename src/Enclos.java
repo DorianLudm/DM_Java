@@ -37,6 +37,11 @@ public class Enclos{
     public List<Animal> getHabitants(){
         return this.habitants;
     }
+
+    @Override
+    public String toString(){
+        return (this.getNomEnclos() +" (" + this.getSurfaceEnclos() + " m2) ");
+    }
 }
 
 class MauvaisTypeAnimalException extends Exception{}

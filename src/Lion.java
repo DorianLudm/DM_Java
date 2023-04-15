@@ -17,7 +17,13 @@ public class Lion extends Animal{
 
     @Override
     public String toString(){
-        String res = "";
-        return res;
+        String criniere = "";
+        if(this.possedeCriniere()){
+            criniere = "possede une criniere";
+        }
+        else{
+            criniere = "n'a pas de criniere";
+        }
+        return super.toString() + "et " + criniere;
     }
 }

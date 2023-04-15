@@ -66,7 +66,12 @@ public class Zoo{
 
     @Override
     public String toString(){
-        String res = "";
+        String res = "Le zoo de " + this.getNomZoo() + " contient:\n";
+        for(Enclos enclosElem: listeEnclos){
+            for(Animal animalElem: enclosElem.getHabitants()){
+                res += "dans " + enclosElem.toString() + animalElem.toString() + " \n";
+            }
+        }
         return res;
     }
 }

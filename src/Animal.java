@@ -1,4 +1,4 @@
-public class Animal implements Soigne{
+public class Animal implements Soigne, Comparable<Animal>{
     private String nom;
     private int poid;
     private boolean estBlesse;
@@ -45,8 +45,19 @@ public class Animal implements Soigne{
 
     @Override
     public String toString(){
-        String res = "";
-        return res;
+        String blesse = "";
+        if(this.estBlesse){
+            blesse = "est blesse";
+        }
+        else{
+            blesse = "n'est pas blesse";
+        }
+        return this.nom + ", " + blesse + " , pese " + this.getPoidAnimal() + "Kg ";
+    }
+
+    @Override
+    public int compareTo(Animal otherAnimal){
+        return this.getNomAnimal().compareTo(otherAnimal.getNomAnimal());
     }
 }
 
