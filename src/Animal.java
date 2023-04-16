@@ -38,6 +38,14 @@ public class Animal implements Soigne, Comparable<Animal>{
         return this.estBlesse;
     }
 
+    public String getCri(){
+        return "un cri!";
+    }
+
+    public String crier(){
+        return this.getNomAnimal() + " fait " + getCri();
+    }
+
     @Override
     public void soigner(){
         this.estBlesse = false;

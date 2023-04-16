@@ -22,7 +22,7 @@ public class Zoo{
         listeEnclos.add(enclos);
     }
 
-    public void soinger(String nomAnimal) throws AnimalNonBlesseException, AnimalNotInZooException{
+    public void soigner(String nomAnimal) throws AnimalNonBlesseException, AnimalNotInZooException{
         boolean soignerHappened = false;
         for(Enclos enclosElem: listeEnclos){
             for(Animal animalElem: enclosElem.getHabitants()){

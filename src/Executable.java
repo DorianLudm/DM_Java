@@ -63,16 +63,63 @@ public class Executable {
         }
         //Fin de l'initialisation
         //Debut des asserts
+        System.out.println();
         System.out.println(beauval.toString());
-        
+        assert beauval.getNomZoo().equals("Beauval");
+        assert vincennes.getNomZoo().equals("Vincennes");
+        beauval.setNom("Zoo de Beauval");
+        assert beauval.getNomZoo().equals("Zoo de Beauval");
+        assert jungleDesSerpents.getNomEnclos().equals("la jungle des serpents de Beauval");
+        assert jungleDesSerpents.getSurfaceEnclos() == (120);
+        assert savaneDesLions.getNomEnclos().equals("la savane des Lions de Beauval");
+        assert savaneDesLions.getSurfaceEnclos() == (1895);
+
+        //("Frederick", 176, false, true);
+        assert frederick.possedeCriniere();
+        assert frederick.getNomAnimal().equals("Frederick");
+        assert frederick.getPoidAnimal() == 176;
+        try {
+            frederick.variationPoidAnimal(13);
+        } catch (ResultatVariationPoidNegatif e) {
+            System.out.println("L'animal ne peut pas avoir un poid negatif!");
+        }
+        assert frederick.getPoidAnimal() == 189;
+        try {
+            frederick.variationPoidAnimal(-200);
+        } catch (ResultatVariationPoidNegatif e) {
+            System.out.println("L'animal ne peut pas avoir un poid negatif!");
+        }
+        System.out.println();
+        assert !frederick.animalBlesse();
+        assert !natasha.possedeCriniere();
+        assert jaques.animalBlesse() && jaques.possedeCriniere();
+
+        //Serpent evan = new Serpent("Evan", 7, false, false);
+        //Serpent bob = new Serpent("Bob Le Serpent", 3, true, false);
+        assert bob.getNomAnimal().equals("Bob Le Serpent");
+        assert bob.animalBlesse();
+        assert !bob.estVenimeux();
+        assert evan.getPoidAnimal() == 7;
+        assert !evan.estVenimeux();
+        assert !evan.animalBlesse();
+        assert benoit.animalBlesse() && benoit.estVenimeux();
+        System.out.println(evan.crier());
+        System.out.println(natasha.crier());
+        System.out.println();
+
         //Tri par nom
-        System.out.println(savaneDesLions.getHabitants());
+        System.out.println("Le tri par nom:");
+        System.out.println("Avant: " + savaneDesLions.getHabitants());
         Collections.sort(savaneDesLions.getHabitants());
-        System.out.println(savaneDesLions.getHabitants());
+        System.out.println("Apres: " +savaneDesLions.getHabitants());
+        System.out.println();
 
         //On récupère l'animal le plus lourd
         ComparatorParPoid comparatorParPoid = new ComparatorParPoid();
+        System.out.println("Le tri par poid:");
         Collections.sort(savaneDesLions.getHabitants(), comparatorParPoid);
+        System.out.println("Liste trie par poid decroissant " + savaneDesLions.getHabitants());
         System.out.println("L'animal le plus lourd de la savane des lions de Beauval est " + savaneDesLions.getHabitants().get(0));
+        System.out.println();
     }
 }

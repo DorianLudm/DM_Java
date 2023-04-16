@@ -26,4 +26,14 @@ public class Lion extends Animal{
         }
         return super.toString() + "et " + criniere;
     }
+
+    @Override
+    public String getCri(){
+        return "Roaarrrrr!";
+    }
+
+    @Override
+    public String crier(){
+        return super.crier();
+    }
 }

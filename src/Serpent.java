@@ -26,4 +26,14 @@ public class Serpent extends Animal{
         }
         return super.toString() + "et " + venimeux;
     }
+
+    @Override
+    public String getCri(){
+        return "Tttssssss!";
+    }
+
+    @Override
+    public String crier(){
+        return super.crier();
+    }
 }
